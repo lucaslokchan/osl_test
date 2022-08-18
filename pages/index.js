@@ -13,6 +13,7 @@ class Home extends React.Component {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className={styles.main}>
+          <div>Dashboard</div>
           <ChatBot />
         </main>
       </div>
