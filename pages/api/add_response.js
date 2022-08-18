@@ -14,6 +14,6 @@ export default async function handler(req, res) {
   // Send a response
   res.status(200).json({
     data: await db.collection("response").findOne({ id: response.insertedId }),
-    message: "Todo added successfully",
+    message: "Response added successfully",
   });
 }
