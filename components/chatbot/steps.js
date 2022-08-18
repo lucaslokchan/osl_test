@@ -1,3 +1,4 @@
+import Post from "./post";
 var re = new RegExp("[a-zA-Z0-9_-]");
 export default [
   {
@@ -24,10 +25,10 @@ export default [
   {
     id: "location",
     options: [
-      { value: 1, label: "China", trigger: "select" },
-      { value: 2, label: "Singapore", trigger: "select" },
-      { value: 3, label: "United Kingdom", trigger: "select" },
-      { value: 3, label: "United States", trigger: "select" },
+      { value: "CHN", label: "China", trigger: "select" },
+      { value: "SGP", label: "Singapore", trigger: "select" },
+      { value: "GBR", label: "United Kingdom", trigger: "select" },
+      { value: "USA", label: "United States", trigger: "select" },
     ],
   },
 
@@ -39,13 +40,33 @@ export default [
   {
     id: "category",
     options: [
-      { value: 1, label: "KYC onboarding", trigger: "prompt_question" },
-      { value: 2, label: "Funding features", trigger: "prompt_question" },
-      { value: 3, label: "Trading features", trigger: "prompt_question" },
-      { value: 4, label: "Custody features", trigger: "prompt_question" },
-      { value: 5, label: "Fee schedule", trigger: "prompt_question" },
-      { value: 6, label: "Security", trigger: "prompt_question" },
-      { value: 7, label: "Others", trigger: "prompt_question" },
+      {
+        value: "KYC Onboarding",
+        label: "KYC Onboarding",
+        trigger: "prompt_question",
+      },
+      {
+        value: "Funding features",
+        label: "Funding features",
+        trigger: "prompt_question",
+      },
+      {
+        value: "Trading features",
+        label: "Trading features",
+        trigger: "prompt_question",
+      },
+      {
+        value: "Custody features",
+        label: "Custody features",
+        trigger: "prompt_question",
+      },
+      {
+        value: "Fee schedule",
+        label: "Fee schedule",
+        trigger: "prompt_question",
+      },
+      { value: "Security", label: "Security", trigger: "prompt_question" },
+      { value: "Others", label: "Others", trigger: "prompt_question" },
     ],
   },
   {
@@ -61,6 +82,7 @@ export default [
   {
     id: "end",
     message: "Thanks, we will contact you shortly.",
-    end: true,
+    trigger: "submitted",
   },
+  { id: "submitted", component: <Post />, asMessage: true, end: true },
 ];
