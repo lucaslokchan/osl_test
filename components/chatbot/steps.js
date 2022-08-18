@@ -4,10 +4,10 @@ export default [
   {
     id: "start",
     message: "What is your name?",
-    trigger: "input_name",
+    trigger: "name",
   },
   {
-    id: "input_name",
+    id: "name",
     user: true,
     validator: (value) => {
       if (re.test(value) == false) {
@@ -46,23 +46,23 @@ export default [
         trigger: "prompt_question",
       },
       {
-        value: "Funding features",
-        label: "Funding features",
+        value: "Funding Features",
+        label: "Funding Features",
         trigger: "prompt_question",
       },
       {
-        value: "Trading features",
-        label: "Trading features",
+        value: "Trading Features",
+        label: "Trading Features",
         trigger: "prompt_question",
       },
       {
-        value: "Custody features",
-        label: "Custody features",
+        value: "Custody Features",
+        label: "Custody Features",
         trigger: "prompt_question",
       },
       {
-        value: "Fee schedule",
-        label: "Fee schedule",
+        value: "Fee Schedule",
+        label: "Fee Schedule",
         trigger: "prompt_question",
       },
       { value: "Security", label: "Security", trigger: "prompt_question" },
@@ -72,12 +72,18 @@ export default [
   {
     id: "prompt_question",
     message: "Please state your question.",
-    trigger: "input_question",
+    trigger: "question",
   },
   {
-    id: "input_question",
+    id: "question",
     user: true,
-    trigger: "end",
+    validator: (value) => {
+      if (value.length >= 200) {
+        return "Maximum 200 characters is allowed!";
+      }
+      return true;
+    },
+    trigger: "submitted",
   },
   {
     id: "end",

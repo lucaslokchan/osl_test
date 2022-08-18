@@ -5,24 +5,26 @@ class Post extends Component {
   constructor(props) {
     super(props);
     const { steps } = this.props;
-    const { input_name, location, category, input_question } = steps;
+    const { name, location, category, question } = steps;
 
-    this.state = { input_name, location, category, input_question };
+    this.state = { name, location, category, question };
   }
 
   componentDidMount() {
     const userObject = {
-      input_name: this.state.input_name.value,
+      name: this.state.name.value,
       location: this.state.location.value,
       category: this.state.category.value,
-      input_question: this.state.input_question.value,
+      question: this.state.question.value,
     };
+    //insert(userObject);
     var json = JSON.stringify(userObject);
-    console.log(json);
+    //console.log(json);
     axios
-      .post(`/api`, userObject)
+      .post(`/api/add_response`, userObject)
       .then((res) => {
         console.log(res.status);
+        console.log(res.body);
       })
       .catch(function(error) {
         console.log(error);
