@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   // Get a document into the collection
   const response = await db
     .collection("response")
-    .find({ category: { $exists: true }, location: "GBR" })
+    .find()
     .toArray();
   res.json(response);
   // Send a response

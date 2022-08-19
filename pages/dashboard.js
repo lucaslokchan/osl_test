@@ -4,12 +4,25 @@ import axios from "axios";
 
 function Dashboard() {
   const [response, setResponse] = useState();
-  const [country, setCountry] = useState();
-  const [category, setCategory] = useState();
+  const [location, setLocation] = useState("all");
+  const [category, setCategory] = useState("all");
+
+  //useEffect(() => {
+  //  axios
+  //    .get(`/api/get_response`)
+  //    .then((res) => {
+  //      console.log(res.status);
+  //      setResponse(res.data);
+  //      console.log(res.data);
+  //    })
+  //    .catch(function(error) {
+  //      console.log(error);
+  //    });
+  //}, []);
 
   useEffect(() => {
     axios
-      .get(`/api/get_response`)
+      .get(`/api/query/${location}/${category}`)
       .then((res) => {
         console.log(res.status);
         setResponse(res.data);
@@ -18,7 +31,7 @@ function Dashboard() {
       .catch(function(error) {
         console.log(error);
       });
-  }, []);
+  }, [location, category]);
 
   return (
     <>
@@ -34,10 +47,10 @@ function Dashboard() {
             }}
             className=" border-black border-2 rounded "
           >
-            <option value="" disabled>
+            <option value="all" disabled>
               Filter Category
             </option>
-            <option value="">All</option>
+            <option value="all">All</option>
             <option value="KYC Onboarding">KYC Onboarding</option>
             <option value="Funding Features">Funding Features</option>
             <option value="Trading Features">Trading Features</option>
@@ -48,14 +61,14 @@ function Dashboard() {
           </select>
           <select
             onChange={(e) => {
-              setCountry(e.target.value);
+              setLocation(e.target.value);
             }}
             className=" border-black border-2 rounded"
           >
-            <option value="" disabled>
+            <option value="all" disabled>
               Filter Country
             </option>
-            <option value="">All</option>
+            <option value="all">All</option>
             <option value="CHN">China</option>
             <option value="SGP">Singapore</option>
             <option value="GBR">United Kingdom</option>
