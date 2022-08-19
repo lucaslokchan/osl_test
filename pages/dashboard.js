@@ -4,21 +4,22 @@ import axios from "axios";
 
 function Dashboard() {
   const [response, setResponse] = useState();
+  const [alldata, setAllData] = useState();
   const [location, setLocation] = useState("all");
   const [category, setCategory] = useState("all");
 
-  //useEffect(() => {
-  //  axios
-  //    .get(`/api/get_response`)
-  //    .then((res) => {
-  //      console.log(res.status);
-  //      setResponse(res.data);
-  //      console.log(res.data);
-  //    })
-  //    .catch(function(error) {
-  //      console.log(error);
-  //    });
-  //}, []);
+  useEffect(() => {
+    axios
+      .get(`/api/get_response`)
+      .then((res) => {
+        console.log(res.status);
+        setAllData(res.data);
+        console.log(res.data);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }, []);
 
   useEffect(() => {
     axios
@@ -40,6 +41,7 @@ function Dashboard() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="md:mx-44">
+        <div>123</div>
         <div>
           <select
             onChange={(e) => {

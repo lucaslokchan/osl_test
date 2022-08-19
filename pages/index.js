@@ -15,7 +15,9 @@ class Home extends React.Component {
         </Head>
         <main className={styles.main}>
           <Link href="dashboard">
-            <a>Dashboard</a>
+            <a>
+              <h2 className="text-3xl font-bold">Dashboard</h2>
+            </a>
           </Link>
 
           <ChatBot />
