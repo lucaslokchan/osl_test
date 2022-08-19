@@ -1,5 +1,5 @@
 import Post from "./post";
-var re = new RegExp("^[w\\-s]+$");
+var re = new RegExp("^[a-zA-Z0-9_-]*$");
 export default [
   {
     id: "start",
