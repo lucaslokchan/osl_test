@@ -1,5 +1,5 @@
 import Post from "./post";
-var re = new RegExp("[a-zA-Z0-9_-]");
+var re = new RegExp("^[w\\-s]+$");
 export default [
   {
     id: "start",
@@ -11,7 +11,7 @@ export default [
     user: true,
     validator: (value) => {
       if (re.test(value) == false) {
-        return "Alphanumeric and - _";
+        return "Only alphanumeric, underscore and dash characters are permitted.";
       }
       return true;
     },
@@ -79,7 +79,7 @@ export default [
     user: true,
     validator: (value) => {
       if (value.length >= 200) {
-        return "Maximum 200 characters is allowed!";
+        return "Maximum character count is 200.";
       }
       return true;
     },

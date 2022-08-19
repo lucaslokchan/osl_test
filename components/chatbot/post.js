@@ -18,13 +18,12 @@ class Post extends Component {
       question: this.state.question.value,
     };
     //insert(userObject);
-    var json = JSON.stringify(userObject);
+    //var json = JSON.stringify(userObject);
     //console.log(json);
     axios
       .post(`/api/add_response`, userObject)
       .then((res) => {
         console.log(res.status);
-        console.log(res.body);
       })
       .catch(function(error) {
         console.log(error);

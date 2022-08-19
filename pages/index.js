@@ -9,7 +9,7 @@ class Home extends React.Component {
     return (
       <div className={styles.container}>
         <Head>
-          <title>Chat bot sandbox with NextJS</title>
+          <title>Chatbot</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className={styles.main}>
