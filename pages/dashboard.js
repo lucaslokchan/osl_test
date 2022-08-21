@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import axios from "axios";
+import TreemapGraph from "./treemap";
 
 function Dashboard() {
   const [response, setResponse] = useState();
@@ -41,18 +42,23 @@ function Dashboard() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="md:mx-44">
-        <div>
-          <iframe
-            style={{
-              background: "#FFFFFF",
-              border: "none",
-              borderRadius: "2px",
-              boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2)",
-            }}
-            width="640"
-            height="480"
-            src="https://charts.mongodb.com/charts-project-0-vufkd/embed/charts?id=6300ddda-0c59-4168-8e2e-f5f95ce12de2&maxDataAge=60&theme=light&autoRefresh=true"
-          ></iframe>
+        <div className="md:grid md:grid-cols-2">
+          <div>
+            <TreemapGraph></TreemapGraph>
+          </div>
+          <div>
+            <iframe
+              style={{
+                background: "#FFFFFF",
+                border: "none",
+                borderRadius: "2px",
+                boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2)",
+              }}
+              width="640"
+              height="480"
+              src="https://charts.mongodb.com/charts-project-0-vufkd/embed/charts?id=6300ddda-0c59-4168-8e2e-f5f95ce12de2&maxDataAge=60&theme=light&autoRefresh=true"
+            ></iframe>
+          </div>
         </div>
         <div>
           <select

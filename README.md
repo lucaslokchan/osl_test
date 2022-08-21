@@ -11,8 +11,12 @@ Javascript
 ### Frontend
 
 Next.js
+
 Tailwindcss
+
 react-simple-chatbot
+
+react-viz
 
 ### Backend
 
