@@ -41,7 +41,19 @@ function Dashboard() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="md:mx-44">
-        <div>123</div>
+        <div>
+          <iframe
+            style={{
+              background: "#FFFFFF",
+              border: "none",
+              borderRadius: "2px",
+              boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2)",
+            }}
+            width="640"
+            height="480"
+            src="https://charts.mongodb.com/charts-project-0-vufkd/embed/charts?id=6300ddda-0c59-4168-8e2e-f5f95ce12de2&maxDataAge=60&theme=light&autoRefresh=true"
+          ></iframe>
+        </div>
         <div>
           <select
             onChange={(e) => {
@@ -49,7 +61,7 @@ function Dashboard() {
             }}
             className=" border-black border-2 rounded "
           >
-            <option value="all" disabled>
+            <option selected="selected" value="all" disabled>
               Filter Category
             </option>
             <option value="all">All</option>
@@ -67,7 +79,7 @@ function Dashboard() {
             }}
             className=" border-black border-2 rounded"
           >
-            <option value="all" disabled>
+            <option selected="selected" value="all" disabled>
               Filter Country
             </option>
             <option value="all">All</option>
@@ -79,21 +91,29 @@ function Dashboard() {
         </div>
         <div className="">
           <table className="table-auto">
-            <thead>
+            <thead className="border-2 border-black">
               <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Location</th>
-                <th scope="col">Category</th>
-                <th scope="col">Question</th>
+                <th scope="col" className="border-2 border-black">
+                  Name
+                </th>
+                <th scope="col" className="border-2 border-black">
+                  Location
+                </th>
+                <th scope="col" className="border-2 border-black">
+                  Category
+                </th>
+                <th scope="col" className="border-2 border-black">
+                  Question
+                </th>
               </tr>
             </thead>
             <tbody>
               {response?.map((res) => (
-                <tr>
-                  <td>{res.name}</td>
-                  <td>{res.location}</td>
-                  <td>{res.category}</td>
-                  <td>{res.question}</td>
+                <tr className="border-2 border-black">
+                  <td className="border-2 border-black">{res.name}</td>
+                  <td className="border-2 border-black">{res.location}</td>
+                  <td className="border-2 border-black">{res.category}</td>
+                  <td className="border-2 border-black">{res.question}</td>
                 </tr>
               ))}
             </tbody>

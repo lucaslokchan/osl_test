@@ -16,6 +16,7 @@
     "postcss": "^7.0.39",
     "postcss-cli": "^10.0.0",
     "react": "16.13.1",
+    "react-d3-treemap": "^1.0.29",
     "react-dom": "16.13.1",
     "react-simple-chatbot": "^0.6.1",
     "styled-components": "^5.2.0",
