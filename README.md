@@ -30,7 +30,7 @@ The Treemap component in react-viz is used for question category distribution ba
 
 #### List of all questions
 
-When you change the options in the "Filter Category" and "Filter Country" drop down menus, the values are passed into pages/api/[...params].js. The dynamic API is then passed to MongoDB to query results based on question category and country.
+When you change the options in the "Filter Category" and "Filter Country" drop down menus, the values are passed into pages/api/[...params].js. The dynamic API is then passed to MongoDB to query results based on question category and country, thus filtering the results.
 
 ## Tech Stack
 
